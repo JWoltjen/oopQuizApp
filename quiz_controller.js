@@ -10,7 +10,7 @@ class Quiz {
         return this.questions[this.questionIndex]; 
     }
     isEnded(){
-        return this.questions.length === this.questionIndex; 
+        return this.questions.length >= this.questionIndex; 
     }
     guess(answer){
         this.questionIndex++; 

@@ -15,6 +15,8 @@ const populate = () => {
         }
         //update question
         showProgress(); 
+
+        //end game and display score
     }
 }; 
 
@@ -34,7 +36,7 @@ const showProgress = () => {
 
 const showScore = () => {
     let gameOverHtml = "<h1>Result</h1>"; 
-    gameOverHtml += "<h2 id='score'> YOur scores: " + quiz.score +"</h2>"
+    gameOverHtml += "<h2 id='score'> Your score: " + quiz.score + " out of " + quiz.questions.length + "</h2>"
     let element = document.getElementById("quiz"); 
     element.innerHTML = gameOverHtml; 
 }
