@@ -1,3 +1,13 @@
+const populate = () => {
+    if(quiz.isEnded()){
+        //showScore(); 
+    } else {
+        // show question
+        let element = document.getElementById("question"); 
+        element.innerHTML = quiz.getQuestionIndex().text; 
+    }
+}
+
 const questions = [
     new Question("Which is not an object-oriented programming language?", ["Java", "C#", "C++", "C"], "C"), 
     new Question("Which language is used for styling web pages?", ["HTML", "JQuery", "CSS", "XML"], "CSS"), 
@@ -6,4 +16,6 @@ const questions = [
     new Question ("MCV is a _____.", ["Language", "Library", "Protocol", "All"], "Protocol")
 ]; 
 
-const quiz = new Quiz(questions)
+const quiz = new Quiz(questions); 
+
+populate(); 
