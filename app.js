@@ -1,6 +1,6 @@
 const populate = () => {
     if(quiz.isEnded()){
-        //showScore(); 
+        showScore(); 
     } else {
         // show question
         let element = document.getElementById("question"); 
@@ -11,8 +11,24 @@ const populate = () => {
         for(let i = 0; i < choices.length; i++){
             let element = document.getElementById("choice" + i)
             element.innerHTML = choices[i]; 
+            guess("btn" + i, choices[i])
         }
     }
+}; 
+
+const guess = (id, guess) => {
+    let button = document.getElementById(id); 
+    button.onclick = ()=> {
+        quiz.guess(guess); 
+        populate(); 
+    }
+}
+
+const showScore = () => {
+    let gameOverHtml = "<h1>Result</h1>"; 
+    gameOverHtml += "<h2 id='score'> YOur scores: " + quiz.score +"</h2>"
+    let element = document.getElementById("quiz"); 
+    element.innerHTML = gameOverHtml; 
 }
 
 const questions = [
