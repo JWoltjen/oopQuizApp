@@ -13,6 +13,8 @@ const populate = () => {
             element.innerHTML = choices[i]; 
             guess("btn" + i, choices[i])
         }
+        //update question
+        showProgress(); 
     }
 }; 
 
@@ -22,6 +24,12 @@ const guess = (id, guess) => {
         quiz.guess(guess); 
         populate(); 
     }
+}; 
+
+const showProgress = () => {
+    let currentQuestionNumber = quiz.questionIndex + 1; 
+    let element = document.getElementById("progress")
+    element.innerHTML = "Question " + currentQuestionNumber + " of " + quiz.questions.length; 
 }
 
 const showScore = () => {
