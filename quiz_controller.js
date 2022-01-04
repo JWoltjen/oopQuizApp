@@ -13,11 +13,12 @@ class Quiz {
         return this.questions.length >= this.questionIndex; 
     }
     guess(answer){
-        this.questionIndex++; 
+         
 
         if(this.getQuestionIndex().correctAnswer(answer)){
             this.score++
         }
+        this.questionIndex++;
     }
 }
 

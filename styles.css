@@ -53,6 +53,12 @@ body {
     outline: 0; 
 }
 
+#score {
+    color: #5a6772; 
+    text-align: center;
+    font-size: 30px;
+}
+
 #progress {
     color: #3b3b3b; 
     font-size: 18px; 
