@@ -5,6 +5,13 @@ const populate = () => {
         // show question
         let element = document.getElementById("question"); 
         element.innerHTML = quiz.getQuestionIndex().text; 
+
+        //show choices
+        let choices = quiz.getQuestionIndex().choices; 
+        for(let i = 0; i < choices.length; i++){
+            let element = document.getElementById("choice" + i)
+            element.innerHTML = choices[i]; 
+        }
     }
 }
 
